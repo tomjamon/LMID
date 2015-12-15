@@ -1,5 +1,11 @@
 /**************************************************/
 
+$(function() {
+    $("#conf1v").focus();
+});
+
+/**************************************************/
+
 $( "#field1" ).submit(function( event ) {
   chrome.tabs.create({
       url:localStorage['config1']+"/"+document.getElementById('conf1v').value
