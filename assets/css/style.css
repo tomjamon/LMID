@@ -1,0 +1,53 @@
+.odd {
+  background:#F7F7F7;
+}
+
+.choice {
+    text-align:center;
+}
+table tr td {
+    border: 1px solid #d4d4d4;
+}
+
+.input-field label {
+    /*color:#333;*/
+}
+
+table tr td i{
+    color:#444 !important;
+}
+
+table tr td label:not(.active){
+    color:#444 !important;
+    font-weight: 600;
+}
+table tr td label{
+    right:0.75em;
+}
+table tr td input[type=text] {
+    border-bottom: none;
+}
+table tr td div.row {
+    margin-bottom:0;
+}
+#launch form {
+    margin-bottom:0;
+}
+.dropdown-content li>span {
+    padding-top :0;
+    padding-bottom :0;
+}
+.dropdown-content li {
+    min-height:inherit;
+}
+.footer {
+    background-color:#48a8b7;
+    font-size:1.4em;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+.footer a {
+    color:white;
+    font-weight:600;
+}

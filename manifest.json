@@ -1,9 +1,8 @@
 {
   "manifest_version": 2,
-
   "name" :"Launch My ID",
-  "description" :"Launch your 3 favorites urls easily and fastly :) ",
-  "version" : "1.0",
+  "description" :"Lancez plus rapidement vos sites favoris",
+  "version" : "2.0",
   "icons": {
      "128": "md128.png",
      "16": "md16.png",
@@ -15,14 +14,14 @@
   "browser_action" :{
     "default_icon": "md64.png",
     "default_popup" :"popup.html",
-    "default_title": "Click here to fast launch!"
+    "default_title": "Cliquez ici pour lancer une application!"
   },
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+1"
       },
-      "description": "Toggle feature foo"
+      "description": "Ouvre le lanceur d'application"
     }
   }
 }

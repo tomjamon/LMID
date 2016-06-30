@@ -1,77 +1,533 @@
 <html>
-<head>
-  <meta charset="UTF-8">
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body style="min-width:400px;">
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s6"><a class="active" href="#launch">Launcher</a></li>
-        <li class="tab col s6"><a href="#config">Config</a></li>
-      </ul>
-    </div>
-    <div id="launch">
-      <div class="row">
-        <form class="col s12" id="field1">
-          <div class="row">
-            <div class="input-field col s12">
-              <input autofocus tabindex="1"  id="conf1v" type="text" class="validate">
-              <label for="conf1v">1 URL</label>
-            </div>
-          </div>
-        </form>
-        <form class="col s12" id="field2">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="conf2v" tabindex="2" type="text" class="validate">
-              <label for="conf2v">2 URL</label>
-            </div>
-          </div>
-        </form>
-        <form class="col s12" id="field3">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="conf3v" tabindex="3" type="text" class="validate">
-              <label for="conf3v">3 URL</label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div id="config" class="col s12">
-      <form class="col s12" id="config1">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="conf1" type="text" class="validate">
-            <label for="conf1">URL</label>
-          </div>
-        </div>
-      </form>
-      <form class="col s12" id="config2">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="conf2" type="text" class="validate">
-            <label for="conf2">URL</label>
-          </div>
-        </div>
-      </form>
-      <br>
-      <form class="col s12" id="config3">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="conf3" type="text" class="validate">
-            <label for="conf3">URL</label>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+    <head>
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <script type="text/javascript" src="materialize/js/jquery.min.js"></script>
-  <script type="text/javascript" src="onload.js"></script>
-  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-</body>
+        <!-- Font -->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="assets/css/style.min.css" media="screen"/>
+        <link type="text/css" rel="stylesheet" href="font/css/font-awesome.min.css" media="screen">
+    </head>
+    <body style="min-width:400px;">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                <li class="tab col s6"><a id="active-launch" class="active" href="#launch">Applications</a></li>
+                <li class="tab col s6"><a href="#config">Configuration</a></li>
+                </ul>
+            </div>
+            <div id="launch">
+                <table>
+                    <tr>
+                        <td id="field_1" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="1">
+                                <div class="input-field col s12">
+                                    <input autofocus tabindex="1"  id="conf_1" type="text" class="choice validate">
+                                    <label for="conf_1">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_2" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="2">
+                                <div class="input-field col s12">
+                                    <input tabindex="2"  id="conf_2" type="text" class="choice validate">
+                                    <label for="conf_2">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_3" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="3">
+                                <div class="input-field col s12">
+                                    <input tabindex="3"  id="conf_3" type="text" class="choice validate">
+                                    <label for="conf_3">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="field_4" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="4">
+                                <div class="input-field col s12">
+                                    <input tabindex="4"  id="conf_4" type="text" class="choice validate">
+                                    <label for="conf_4">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_5" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="5">
+                                <div class="input-field col s12">
+                                    <input tabindex="5"  id="conf_5" type="text" class="choice validate">
+                                    <label for="conf_5">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_6" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="6">
+                                <div class="input-field col s12">
+                                    <input tabindex="6"  id="conf_6" type="text" class="choice validate">
+                                    <label for="conf_6">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="field_7" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="7">
+                                <div class="input-field col s12">
+                                    <input tabindex="7"  id="conf_7" type="text" class="choice validate">
+                                    <label for="conf_7">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_8" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row" data-id="8">
+                                <div class="input-field col s12">
+                                    <input tabindex="8"  id="conf_8" type="text" class="choice validate">
+                                    <label for="conf_8">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                        <td id="field_9" class="choice">
+                            <i class="fa fa-question-circle fa-2x"></i>
+                            <br>
+                            <form class="row"  data-id="9">
+                                <div class="input-field col s12">
+                                    <input tabindex="9"  id="conf_9" type="text" class="choice validate">
+                                    <label for="conf_9">Available</label>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="config">
+                <form id="configuration">
+
+                    <div class="conf_form">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_1" type="text" class="validate">
+                                <label for="name_1" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_1" type="text">
+                                <label for="link_direct_1">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_1" type="text" class="validate">
+                                <label for="link_lmid_1" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_1">
+                                    <optgroup label="Defaut">
+                                        <option value="fa-folder">Fichier</option>
+                                        <option value="fa-globe">Globe</option>
+                                        <option value="fa-user">Utilisateur</option>
+                                        <option value="fa-glass">Verre</option>
+                                        <option value="fa-hotel">Hotel</option>
+                                        <option value="fa-tag">Tag</option>
+                                        <option value="fa-music">Music</option>
+                                        <option value="fa-upload">Upload</option>
+                                    </optgroup>
+                                    <optgroup label="Marques">
+                                        <option value="fa-facebook">Facebook</option>
+                                        <option value="fa-twitter">Twitter</option>
+                                        <option value="fa-linkedin">Linkedin</option>
+                                        <option value="fa-bitbucket">Bitbucket</option>
+                                        <option value="fa-flickr">Flickr</option>
+                                        <option value="fa-github">Github</option>
+                                        <option value="fa-dribbble">Dribbble</option>
+                                        <option value="fa-reddit">Reddit</option>
+                                        <option value="fa-twitch">Twitch</option>
+                                    </optgroup>
+                                </select>
+                                <label for="icon_1">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form odd">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_2" type="text" class="validate">
+                                <label for="name_2" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_2" type="text">
+                                <label for="link_direct_2">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_2" type="text" class="validate">
+                                <label for="link_lmid_2" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_2">
+                                    <option value="fa-folder">Fichier</option>
+                                    <option value="fa-globe">Globe</option>
+                                    <option value="fa-user">Utilisateur</option>
+                                    <option value="fa-glass">Verre</option>
+                                    <option value="fa-hotel">Hotel</option>
+                                    <option value="fa-tag">Tag</option>
+                                    <option value="fa-music">Music</option>
+                                    <option value="fa-upload">Upload</option>
+                                    <option value="fa-facebook">Facebook</option>
+                                    <option value="fa-twitter">Twitter</option>
+                                    <option value="fa-linkedin">Linkedin</option>
+                                    <option value="fa-bitbucket">Bitbucket</option>
+                                    <option value="fa-flickr">Flickr</option>
+                                    <option value="fa-github">Github</option>
+                                    <option value="fa-dribbble">Dribbble</option>
+                                    <option value="fa-reddit">Reddit</option>
+                                    <option value="fa-twitch">Twitch</option>
+                                </select>
+                               <label for="icon_2">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_3" type="text" class="validate">
+                                <label for="name_3" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_3" type="text">
+                                <label for="link_direct_3">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_3" type="text" class="validate">
+                                <label for="link_lmid_3" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_3">
+                                        <option value="" disabled>Logo</option>
+                                        <optgroup label="Defaut">
+                                            <option value="fa-folder">Fichier</option>
+                                            <option value="fa-globe">Globe</option>
+                                            <option value="fa-user">Utilisateur</option>
+                                            <option value="fa-glass">Verre</option>
+                                            <option value="fa-hotel">Hotel</option>
+                                            <option value="fa-tag">Tag</option>
+                                            <option value="fa-music">Music</option>
+                                            <option value="fa-upload">Upload</option>
+                                        </optgroup>
+                                        <optgroup label="Marques">
+                                            <option value="fa-facebook">Facebook</option>
+                                            <option value="fa-twitter">Twitter</option>
+                                            <option value="fa-linkedin">Linkedin</option>
+                                            <option value="fa-bitbucket">Bitbucket</option>
+                                            <option value="fa-flickr">Flickr</option>
+                                            <option value="fa-github">Github</option>
+                                            <option value="fa-dribbble">Dribbble</option>
+                                            <option value="fa-reddit">Reddit</option>
+                                            <option value="fa-twitch">Twitch</option>
+                                        </optgroup>
+                                </select>
+                                <label for="icon_3">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conf_form odd">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_4" type="text" class="validate">
+                                <label for="name_4" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_4" type="text">
+                                <label for="link_direct_4">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_4" type="text" class="validate">
+                                <label for="link_lmid_4" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_4">
+                                    <option value="" disabled>Logo</option>
+                                    <optgroup label="Defaut">
+                                        <option value="fa-folder">Fichier</option>
+                                        <option value="fa-globe">Globe</option>
+                                        <option value="fa-user">Utilisateur</option>
+                                        <option value="fa-glass">Verre</option>
+                                        <option value="fa-hotel">Hotel</option>
+                                        <option value="fa-tag">Tag</option>
+                                        <option value="fa-music">Music</option>
+                                        <option value="fa-upload">Upload</option>
+                                    </optgroup>
+                                    <optgroup label="Marques">
+                                        <option value="fa-facebook">Facebook</option>
+                                        <option value="fa-twitter">Twitter</option>
+                                        <option value="fa-linkedin">Linkedin</option>
+                                        <option value="fa-bitbucket">Bitbucket</option>
+                                        <option value="fa-flickr">Flickr</option>
+                                        <option value="fa-github">Github</option>
+                                        <option value="fa-dribbble">Dribbble</option>
+                                        <option value="fa-reddit">Reddit</option>
+                                        <option value="fa-twitch">Twitch</option>
+                                    </optgroup>
+                                </select>
+                                <label for="icon_4">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_5" type="text" class="validate">
+                                <label for="name_5" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_5" type="text">
+                                <label for="link_direct_5">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_5" type="text" class="validate">
+                                <label for="link_lmid_5" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_5">
+                                        <option value="" disabled>Logo</option>
+                                        <optgroup label="Defaut">
+                                            <option value="fa-folder">Fichier</option>
+                                            <option value="fa-globe">Globe</option>
+                                            <option value="fa-user">Utilisateur</option>
+                                            <option value="fa-glass">Verre</option>
+                                            <option value="fa-hotel">Hotel</option>
+                                            <option value="fa-tag">Tag</option>
+                                            <option value="fa-music">Music</option>
+                                            <option value="fa-upload">Upload</option>
+                                        </optgroup>
+                                        <optgroup label="Marques">
+                                            <option value="fa-facebook">Facebook</option>
+                                            <option value="fa-twitter">Twitter</option>
+                                            <option value="fa-linkedin">Linkedin</option>
+                                            <option value="fa-bitbucket">Bitbucket</option>
+                                            <option value="fa-flickr">Flickr</option>
+                                            <option value="fa-github">Github</option>
+                                            <option value="fa-dribbble">Dribbble</option>
+                                            <option value="fa-reddit">Reddit</option>
+                                            <option value="fa-twitch">Twitch</option>
+                                        </optgroup>
+                                </select>
+                                <label for="icon_5">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form odd">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_6" type="text" class="validate">
+                                <label for="name_6" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_6" type="text">
+                                <label for="link_direct_6">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_6" type="text" class="validate">
+                                <label for="link_lmid_6" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_6">
+                                        <option value="" disabled>Logo</option>
+                                        <optgroup label="Defaut">
+                                            <option value="fa-folder">Fichier</option>
+                                            <option value="fa-globe">Globe</option>
+                                            <option value="fa-user">Utilisateur</option>
+                                            <option value="fa-glass">Verre</option>
+                                            <option value="fa-hotel">Hotel</option>
+                                            <option value="fa-tag">Tag</option>
+                                            <option value="fa-music">Music</option>
+                                            <option value="fa-upload">Upload</option>
+                                        </optgroup>
+                                        <optgroup label="Marques">
+                                            <option value="fa-facebook">Facebook</option>
+                                            <option value="fa-twitter">Twitter</option>
+                                            <option value="fa-linkedin">Linkedin</option>
+                                            <option value="fa-bitbucket">Bitbucket</option>
+                                            <option value="fa-flickr">Flickr</option>
+                                            <option value="fa-github">Github</option>
+                                            <option value="fa-dribbble">Dribbble</option>
+                                            <option value="fa-reddit">Reddit</option>
+                                            <option value="fa-twitch">Twitch</option>
+                                        </optgroup>
+                                </select>
+                                <label for="icon_6">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conf_form">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_7" type="text" class="validate">
+                                <label for="name_7" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_7" type="text">
+                                <label for="link_direct_7">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_7" type="text" class="validate">
+                                <label for="link_lmid_7" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_7">
+                                    <option value="" disabled>Logo</option>
+                                    <optgroup label="Defaut">
+                                        <option value="fa-folder">Fichier</option>
+                                        <option value="fa-globe">Globe</option>
+                                        <option value="fa-user">Utilisateur</option>
+                                        <option value="fa-glass">Verre</option>
+                                        <option value="fa-hotel">Hotel</option>
+                                        <option value="fa-tag">Tag</option>
+                                        <option value="fa-music">Music</option>
+                                        <option value="fa-upload">Upload</option>
+                                    </optgroup>
+                                    <optgroup label="Marques">
+                                        <option value="fa-facebook">Facebook</option>
+                                        <option value="fa-twitter">Twitter</option>
+                                        <option value="fa-linkedin">Linkedin</option>
+                                        <option value="fa-bitbucket">Bitbucket</option>
+                                        <option value="fa-flickr">Flickr</option>
+                                        <option value="fa-github">Github</option>
+                                        <option value="fa-dribbble">Dribbble</option>
+                                        <option value="fa-reddit">Reddit</option>
+                                        <option value="fa-twitch">Twitch</option>
+                                    </optgroup>
+                                </select>
+                                <label for="icon_7">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form odd">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_8" type="text" class="validate">
+                                <label for="name_8" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_8" type="text">
+                                <label for="link_direct_8">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_8" type="text" class="validate">
+                                <label for="link_lmid_8" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_8">
+                                    <option value="" disabled>Logo</option>
+                                    <optgroup label="Defaut">
+                                        <option value="fa-folder">Fichier</option>
+                                        <option value="fa-globe">Globe</option>
+                                        <option value="fa-user">Utilisateur</option>
+                                        <option value="fa-glass">Verre</option>
+                                        <option value="fa-hotel">Hotel</option>
+                                        <option value="fa-tag">Tag</option>
+                                        <option value="fa-music">Music</option>
+                                        <option value="fa-upload">Upload</option>
+                                    </optgroup>
+                                    <optgroup label="Marques">
+                                        <option value="fa-facebook">Facebook</option>
+                                        <option value="fa-twitter">Twitter</option>
+                                        <option value="fa-linkedin">Linkedin</option>
+                                        <option value="fa-bitbucket">Bitbucket</option>
+                                        <option value="fa-flickr">Flickr</option>
+                                        <option value="fa-github">Github</option>
+                                        <option value="fa-dribbble">Dribbble</option>
+                                        <option value="fa-reddit">Reddit</option>
+                                        <option value="fa-twitch">Twitch</option>
+                                    </optgroup>
+                                </select>
+                                <label for="icon_8">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conf_form">
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <input placeholder="Facebook" id="name_9" type="text" class="validate">
+                                <label for="name_9" class="active">Nom</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input placeholder="www.facebook.com" id="link_direct_9" type="text">
+                                <label for="link_direct_9">Lien Direct</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input placeholder="facebook.com/user/" id="link_lmid_9" type="text" class="validate">
+                                <label for="link_lmid_9" class="active">Lien LMID</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <select id="icon_9">
+                                    <option value="fa-folder">Fichier</option>
+                                    <option value="fa-globe">Globe</option>
+                                    <option value="fa-tag">Tag</option>
+                                    <option value="fa-music">Music</option>
+                                    <option value="fa-upload">Upload</option>
+                                    <option value="fa-facebook">Facebook</option>
+                                    <option value="fa-twitter">Twitter</option>
+                                    <option value="fa-linkedin">Linkedin</option>
+                                    <option value="fa-bitbucket">Bitbucket</option>
+                                    <option value="fa-flickr">Flickr</option>
+                                    <option value="fa-github">Github</option>
+                                    <option value="fa-dribbble">Dribbble</option>
+                                    <option value="fa-reddit">Reddit</option>
+                                    <option value="fa-twitch">Twitch</option>
+                                </select>
+                                <label for="icon_9">Lien Direct</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        Développé avec <i class="fa fa-heart"></i> par
+                        <a href="http://www.tomjamon.com">Tom Jamon</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/onload.min.js"></script>
+        <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    </body>
 </html>
