@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name" :"Launch My ID",
   "description" :"Lancez plus rapidement vos sites favoris",
-  "version" : "2.1.2,
+  "version" : "2.1.2",
   "icons": {
      "128": "md128.png",
      "16": "md16.png",
