@@ -1,6 +1,11 @@
 # Launch My ID
 
-Extension Chrome pour lancer rapidement vos favoris avec un ID spécifique.
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
+[![license](https://img.shields.io/badge/Licence-MIT-blue.svg)]()
+
+Extension Chrome pour lancer rapidement vos favoris avec un identifiant spécifique.
 
 Exemple : "http://www.twitter.com" et "http://www.twitter.com/tomjamon"
 
