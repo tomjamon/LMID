@@ -1,16 +1,55 @@
 .odd {
-  background:#F7F7F7;
+  background:rgba(110, 131, 238, 0.1);
 }
 
 .choice {
     text-align:center;
 }
 table tr td {
-    border: 1px solid #d4d4d4;
+    border: none;
+}
+html {
+    min-width:600px;
+    max-width:600px;
 }
 
-.input-field label {
-    /*color:#333;*/
+::-webkit-scrollbar {
+    display: block;
+}
+
+body {
+    max-width:600px;
+}
+
+.conf_form {
+    padding: 20px;
+}
+
+.row {
+    margin-bottom:0;
+}
+td {
+    padding:40px 5px;
+    width:33%;
+    display: table-cell;
+}
+
+input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #b6bde2;
+    box-shadow: 0 1px 0 0 #b6bde2;
+}
+input[type=text]:focus:not([readonly])+label {
+    color:#b6bde2;
+}
+.tabs .tab a {
+    color:#6e83ee;
+}
+.tabs .tab a:hover {
+    color:#b6bde2;
+}
+
+.tabs .indicator {
+    background-color:#6e83ee;
 }
 
 table tr td i{

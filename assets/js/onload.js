@@ -1,90 +1,103 @@
-// Fast focus
 $(function() {
     $("#conf_1").focus();
-});
-
-// Default values
-if (typeof localStorage == 'undefined' || localStorage.length == 0) {
-
-    // Facebook
-    localStorage['name_1'] = 'Facebook';
-    localStorage['link_direct_1'] = 'https://www.facebook.com';
-    localStorage['link_lmid_1'] = 'https://www.facebook.com/';
-    localStorage['icon_1'] = 'fa-facebook';
-
-    // Twitter
-    localStorage['name_2'] = 'Twitter';
-    localStorage['link_direct_2'] = 'https://www.twitter.com';
-    localStorage['link_lmid_2'] = 'https://www.twitter.com/';
-    localStorage['icon_2'] = 'fa-twitter';
-
-    // Linkedin
-    localStorage['name_3'] = 'Linkedin';
-    localStorage['link_direct_3'] = 'https://www.linkedin.com';
-    localStorage['link_lmid_3'] = 'https://www.linkedin.com/in/';
-    localStorage['icon_3'] = 'fa-linkedin';
-
-    // Bitbucket
-    localStorage['name_4'] = 'Bitbucket';
-    localStorage['link_direct_4'] = 'http://www.bitbucket.org';
-    localStorage['link_lmid_4'] = 'http://www.bitbucket.org/';
-    localStorage['icon_4'] = 'fa-bitbucket';
-
-    // Flickr
-    localStorage['name_5'] = 'Flickr';
-    localStorage['link_direct_5'] = 'https://www.flickr.com';
-    localStorage['link_lmid_5'] = 'https://www.flickr.com/photos/';
-    localStorage['icon_5'] = 'fa-flickr';
-
-    // Github
-    localStorage['name_6'] = 'Github';
-    localStorage['link_direct_6'] = 'https://github.com';
-    localStorage['link_lmid_6'] = 'http://github.com/';
-    localStorage['icon_6'] = 'fa-github';
-
-    // Dribbble
-    localStorage['name_7'] = 'Dribbble';
-    localStorage['link_direct_7'] = 'https://dribbble.com';
-    localStorage['link_lmid_7'] = 'https://dribbble.com/';
-    localStorage['icon_7'] = 'fa-dribbble';
-
-    // Reddit
-    localStorage['name_8'] = 'Reddit';
-    localStorage['link_direct_8'] = 'https://www.reddit.com';
-    localStorage['link_lmid_8'] = 'https://www.reddit.com/user/';
-    localStorage['icon_8'] = 'fa-reddit';
-
-    // Twitch
-    localStorage['name_9'] = 'Twitch';
-    localStorage['link_direct_9'] = 'https://www.twitch.tv';
-    localStorage['link_lmid_9'] = 'https://www.twitch.tv/';
-    localStorage['icon_9'] = 'fa-twitch';
-}
-
-// Launch My ID
-$(function() {
+    chrome.storage.sync.get('name_1', function(obj){
+        if(!obj['name_1']) {
+            // Facebook
+            chrome.storage.sync.set({"name_1": "Facebook"}, null);
+            chrome.storage.sync.set({"link_direct_1": "https://www.facebook.com"}, null);
+            chrome.storage.sync.set({'link_lmid_1': 'https://www.facebook.com/'}, null);
+            chrome.storage.sync.set({'icon_1': 'fa-facebook'}, null);
+            // Twitter
+            chrome.storage.sync.set({'name_2': 'Twitter'}, null);
+            chrome.storage.sync.set({'link_direct_2': 'https://www.twitter.com'}, null);
+            chrome.storage.sync.set({'link_lmid_2': 'https://www.twitter.com/'}, null);
+            chrome.storage.sync.set({'icon_2': 'fa-twitter'}, null);
+            // Linkedin
+            chrome.storage.sync.set({'name_3': 'Linkedin'}, null);
+            chrome.storage.sync.set({'link_direct_3': 'https://www.linkedin.com'}, null);
+            chrome.storage.sync.set({'link_lmid_3': 'https://www.linkedin.com/in/'}, null);
+            chrome.storage.sync.set({'icon_3': 'fa-linkedin'}, null);
+            // Bitbucket
+            chrome.storage.sync.set({'name_4': 'Bitbucket'}, null);
+            chrome.storage.sync.set({'link_direct_4': 'http://www.bitbucket.org'}, null);
+            chrome.storage.sync.set({'link_lmid_4': 'http://www.bitbucket.org/'}, null);
+            chrome.storage.sync.set({'icon_4': 'fa-bitbucket'}, null);
+            // Flickr
+            chrome.storage.sync.set({'name_5': 'Flickr'}, null);
+            chrome.storage.sync.set({'link_direct_5': 'https://www.flickr.com'}, null);
+            chrome.storage.sync.set({'link_lmid_5': 'https://www.flickr.com/photos/'}, null);
+            chrome.storage.sync.set({'icon_5': 'fa-flickr'}, null);
+            // Github
+            chrome.storage.sync.set({'name_6': 'Github'}, null);
+            chrome.storage.sync.set({'link_direct_6': 'https://github.com'}, null);
+            chrome.storage.sync.set({'link_lmid_6': 'http://github.com/'}, null);
+            chrome.storage.sync.set({'icon_6': 'fa-github'}, null);
+            // Dribbble
+            chrome.storage.sync.set({'name_7': 'Dribbble'}, null);
+            chrome.storage.sync.set({'link_direct_7': 'https://dribbble.com'}, null);
+            chrome.storage.sync.set({'link_lmid_7': 'https://dribbble.com/'}, null);
+            chrome.storage.sync.set({'icon_7': 'fa-dribbble'}, null);
+            // Reddit
+            chrome.storage.sync.set({'name_8': 'Reddit'}, null);
+            chrome.storage.sync.set({'link_direct_8': 'https://www.reddit.com'}, null);
+            chrome.storage.sync.set({'link_lmid_8': 'https://www.reddit.com/user/'}, null);
+            chrome.storage.sync.set({'icon_8': 'fa-reddit'}, null);
+            // Twitch
+            chrome.storage.sync.set({'name_9': 'Twitch'}, null);
+            chrome.storage.sync.set({'link_direct_9': 'https://www.twitch.tv'}, null);
+            chrome.storage.sync.set({'link_lmid_9': 'https://www.twitch.tv/'}, null);
+            chrome.storage.sync.set({'icon_9': 'fa-twitch'}, null);
+        }
+    });
 
     var pas;
     var current_id;
     var id;
-
     init();
 
     $( "#active-launch" ).click(function() {
         init();
     });
 
-    function init(){
+    function init() {
         for (pas = 1; pas <= 9; pas++) {
+            (function (pas) {
+                chrome.storage.sync.get('name_'+pas, function(name){
+                    if(name[Object.keys(name)[0]]) {
 
-            if(localStorage['name_'+pas]) {
-                document.getElementById('name_'+pas).value = localStorage['name_'+pas];
-                $('#field_'+pas+' i').removeClass().addClass("fa fa-2x "+localStorage['icon_'+pas]);
-                $('#field_'+pas+' label').text(localStorage['name_'+pas]);
-            }
-            if(localStorage['link_direct_'+pas]) document.getElementById('link_direct_'+pas).value = localStorage['link_direct_'+pas];
-            if(localStorage['link_lmid_'+pas]) document.getElementById('link_lmid_'+pas).value = localStorage['link_lmid_'+pas];
-            if(localStorage['icon_'+pas]) $('#icon_'+pas).val(localStorage['icon_'+pas]);
+                        document.getElementById( Object.keys(name)[0]).value = name[Object.keys(name)[0]];
+
+                        $('#field_'+pas+' i').removeClass().addClass("fa fa-2x");
+
+                        chrome.storage.sync.get('icon_'+pas, function(icon) {
+                            if(icon[Object.keys(icon)[0]]){
+                                $('#field_'+pas+' i').addClass( icon[Object.keys(icon)[0]] );
+                            }
+                        });
+
+                        chrome.storage.sync.get('name_'+pas, function(nameText) {
+                            if(nameText[Object.keys(nameText)[0]]){
+                                $('#field_'+pas+' label').text( nameText[Object.keys(nameText)[0]] );
+                            }
+                        });
+                    }
+                });
+                chrome.storage.sync.get('link_direct_'+pas, function(ld){
+                    if(ld[Object.keys(ld)[0]]) {
+                        document.getElementById( Object.keys(ld)[0] ).value = ld[Object.keys(ld)[0]];
+                    }
+                });
+                chrome.storage.sync.get('link_lmid_'+pas, function(ll){
+                    if(ll[Object.keys(ll)[0]]) {
+                        document.getElementById( Object.keys(ll)[0] ).value = ll[Object.keys(ll)[0]];
+                    }
+                });
+                chrome.storage.sync.get('icon_'+pas, function(ip){
+                    if(ip[Object.keys(ip)[0]]) {
+                        document.getElementById(Object.keys(ip)[0]).value = ip[Object.keys(ip)[0]];
+                    }
+                });
+            }) (pas);
         }
     }
 
@@ -93,30 +106,38 @@ $(function() {
         current_id = $(this).data("id");
 
         if($('#conf_'+current_id).val() != ''){
-            chrome.tabs.create({
-                url:localStorage['link_lmid_'+current_id]+$('#conf_'+current_id).val()
+            chrome.storage.sync.get('link_lmid_'+current_id, function(linklmid){
+                if(linklmid[Object.keys(linklmid)[0]]) {
+                    chrome.tabs.create({
+                        url:linklmid[Object.keys(linklmid)[0]]+$('#conf_'+current_id).val()
+                    });
+                }
             });
         } else {
-            chrome.tabs.create({
-                url:localStorage['link_direct_'+current_id]
+            chrome.storage.sync.get('link_direct_'+current_id, function(linkdirect){
+                if(linkdirect[Object.keys(linkdirect)[0]]) {
+                    chrome.tabs.create({
+                        url:linkdirect[Object.keys(linkdirect)[0]]
+                    });
+                }
             });
         }
         event.preventDefault();
     });
 
     $("#configuration :input, #configuration select").change(function() {
-        id = $(this).attr('id');
-        localStorage[id] = document.getElementById(id).value;
-        console.log(localStorage[id]+" : "+document.getElementById(id).value);
+        var updateConfId = $(this).attr('id');
+        var updateConfValue = document.getElementById(updateConfId).value;
+        var updateConfJsonValue = '{"'+updateConfId+'": "'+updateConfValue+'"}';
+        var updateConfJson = JSON.parse(updateConfJsonValue);
+        chrome.storage.sync.set(updateConfJson , null );
     });
-
 
     $('select').material_select();
 
     $( ".footer a" ).click(function() {
         chrome.tabs.create({
-            url:"http://www.tomjamon.com"
+            url:"https://www.tomjamon.com"
         });
     });
-
 });
