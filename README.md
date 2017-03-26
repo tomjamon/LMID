@@ -1,5 +1,5 @@
 <p align="center">
-![LMID](https://raw.githubusercontent.com/TiDJ/launch-my-id/master/md128.png)
+<img  src="https://raw.githubusercontent.com/TiDJ/launch-my-id/master/md128.png">
 <br><br>
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
