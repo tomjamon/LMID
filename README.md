@@ -1,14 +1,13 @@
 <p align="center">
 <img  src="https://raw.githubusercontent.com/TiDJ/launch-my-id/master/md128.png">
 <br><br>
-
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/jfejhdbhehbbiejljkjdgaikandkbjko.svg)]()
-[![license](https://img.shields.io/badge/Licence-MIT-blue.svg)]()
+<a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/chrome-web-store/v/jfejhdbhehbbiejljkjdgaikandkbjko.svg" alt="Chrome Web Store"></a>
+<a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/chrome-web-store/d/jfejhdbhehbbiejljkjdgaikandkbjko.svg" alt="Chrome Web Store"></a>
+<a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/chrome-web-store/rating/jfejhdbhehbbiejljkjdgaikandkbjko.svg" alt="Chrome Web Store"></a>
+<a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/badge/Licence-MIT-blue.svg" alt="Chrome Web Store"></a>
 </p>
 
-## Launch My ID
+# Launch My ID
 
 ## About it
 LMID is a Chrome extension to fastly launch your favorites websites with an ID, for example : "http://www.twitter.com" and "http://www.twitter.com/MaterializeCSS"
