@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name" :"Launch My ID",
-    "description" :"Lancez plus rapidement vos sites favoris",
-    "version" : "2.2.0",
+    "description" :"Start your favorite sites faster, with an ID",
+    "version" : "2.2.1",
     "icons": {
         "128": "md128.png",
         "16": "md16.png",
