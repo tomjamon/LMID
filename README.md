@@ -1,5 +1,5 @@
 <p align="center">
-<img  src="https://raw.githubusercontent.com/TiDJ/launch-my-id/master/md128.png">
+<img  src="https://raw.githubusercontent.com/TiDJ/LMID/master/md128.png">
 <br><br>
 <a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/chrome-web-store/v/jfejhdbhehbbiejljkjdgaikandkbjko.svg" alt="Chrome Web Store"></a>
 <a href="https://github.com/TiDJ/launch-my-id/blob/master"><img src="https://img.shields.io/chrome-web-store/d/jfejhdbhehbbiejljkjdgaikandkbjko.svg" alt="Chrome Web Store"></a>
