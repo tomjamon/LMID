@@ -1,30 +1,29 @@
 {
-    "manifest_version": 2,
-    "name" :"Launch My ID",
-    "description" :"Start your favorite sites faster, with an ID",
+    "manifest_version" : 2,
+    "name" : "LMID",
+    "description" : "Start your favorite sites faster, with an ID",
     "version" : "2.2.1",
-    "icons": {
+    "icons" : {
         "128": "md128.png",
         "16": "md16.png",
-        "24": "md24.png",
         "32": "md32.png",
         "48": "md48.png",
         "64": "md64.png"
     },
-    "permissions": [
+    "permissions" : [
         "storage"
     ],
-    "browser_action" :{
-        "default_icon": "md64.png",
+    "browser_action" : {
+        "default_icon" : "md64.png",
         "default_popup" :"popup.html",
-        "default_title": "Cliquez ici pour lancer une application!"
+        "default_title" : "Click here to launch an application!"
     },
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+1"
+    "commands" : {
+        "_execute_browser_action" : {
+            "suggested_key" : {
+                "default" : "Ctrl+Shift+1"
             },
-            "description": "Ouvre le lanceur d'application"
+            "description" : "Open the application launcher"
         }
     }
 }
