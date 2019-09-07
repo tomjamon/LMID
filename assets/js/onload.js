@@ -48,6 +48,7 @@ $(function() {
             chrome.storage.sync.set({'link_lmid_9': 'https://www.twitch.tv/'}, null);
             chrome.storage.sync.set({'icon_9': 'fa-twitch'}, null);
         }
+        init();
     });
 
     var pas;
@@ -137,7 +138,7 @@ $(function() {
 
     $( ".footer a" ).click(function() {
         chrome.tabs.create({
-            url:"https://www.tomjamon.com"
+            url:"https://tomjamon.com"
         });
     });
 });
