@@ -2,7 +2,7 @@
     "manifest_version" : 2,
     "name" : "LMID",
     "description" : "Start your favorite sites faster, with an ID",
-    "version" : "2.2.3",
+    "version" : "2.2.4",
     "icons" : {
         "128": "md128.png",
         "16": "md16.png",
