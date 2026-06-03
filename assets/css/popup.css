@@ -1,0 +1,329 @@
+:root {
+  --color-primary: #6e83ee;
+  --color-primary-hover: #5a6fd4;
+  --color-primary-muted: rgba(110, 131, 238, 0.12);
+  --color-accent: #48a8b7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f6f7fb;
+  --color-border: #e2e6ef;
+  --color-text: #2d3348;
+  --color-text-muted: #6b7289;
+  --color-icon: #444444;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(45, 51, 72, 0.08);
+  --shadow-md: 0 4px 12px rgba(45, 51, 72, 0.1);
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --transition: 200ms ease-out;
+  --popup-width: 600px;
+  --touch-min: 44px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: var(--popup-width);
+  max-width: var(--popup-width);
+}
+
+body {
+  margin: 0;
+  max-width: var(--popup-width);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Tabs */
+.app-header {
+  padding: var(--space-md) var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tab-list {
+  display: flex;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: var(--space-xs);
+  list-style: none;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.tab-button {
+  flex: 1;
+  min-height: var(--touch-min);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.tab-button:hover {
+  color: var(--color-text);
+}
+
+.tab-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.tab-button[aria-selected="true"] {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+/* Launch grid */
+.launch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.launch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg) var(--space-sm);
+  background: var(--color-surface);
+  border: none;
+  transition: background var(--transition);
+}
+
+.launch-card--alt {
+  background: var(--color-primary-muted);
+}
+
+.launch-card:hover {
+  background: rgba(110, 131, 238, 0.18);
+}
+
+.launch-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-sm);
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.launch-card__icon {
+  font-size: 1.5rem;
+  color: var(--color-icon);
+}
+
+.launch-card__form {
+  width: 100%;
+  margin: 0;
+}
+
+.launch-card__field {
+  width: 100%;
+}
+
+.launch-card__input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 13px;
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.launch-card__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-muted);
+}
+
+.launch-card__input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.launch-card__label {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Config */
+.config-panel {
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.config-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.config-panel::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+.config-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.config-slot {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.config-slot:nth-child(odd) {
+  background: var(--color-primary-muted);
+}
+
+.config-slot__title {
+  margin: 0 0 var(--space-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.config-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.config-row:last-child {
+  margin-bottom: 0;
+}
+
+.config-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.config-field--name {
+  flex: 0 0 140px;
+}
+
+.config-field--url {
+  flex: 1 1 200px;
+}
+
+.config-field--prefix {
+  flex: 1 1 220px;
+}
+
+.config-field--icon {
+  flex: 0 0 160px;
+}
+
+.config-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.config-field input,
+.config-field select {
+  width: 100%;
+  min-height: 36px;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.config-field input:focus,
+.config-field select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-muted);
+}
+
+.config-field input:focus-visible,
+.config-field select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+/* Footer */
+.app-footer {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+
+.app-footer a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.app-footer a:hover {
+  opacity: 0.9;
+}
+
+.app-footer a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.app-footer .fa-heart {
+  color: #ffb4b4;
+}
